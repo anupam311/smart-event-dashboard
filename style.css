@@ -1,0 +1,88 @@
+/* style.css */
+
+/* Global Styles */
+body{
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #55d11f;
+    margin: 0;
+    padding: 0;
+}
+
+/* Heading Styles */
+h1{
+    text-align: center;
+    color: #fff;
+}
+
+h2{
+    text-align: left;
+    color: #55d11f;
+    font-size: 18px;
+}
+
+/* Styles for the main container */
+#container{
+    width: 80%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Styles for the Add_New_Events and My_Events containers */
+#add-new-events, #my-events{
+    background-color: #fff;
+    padding: 20px;
+    margin: 5px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#add-new-events{
+    width: 32%;
+}
+
+#my-events{
+    width: 64%;
+}
+
+/* Styles for the event form in Add_New_Events container */
+#event-form{
+    display: flex;
+    flex-direction: column;
+}
+
+#event-form label{
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#event-form input, #event-form select, #event-form textarea{
+    width: 100%;
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+/* Styles for the Add and Clear_event buttons */
+#add-event, #clear-events{
+    background-color: #55d11f;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#add-event:hover, #clear-events:hover{
+    background-color: #45a11f;
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
