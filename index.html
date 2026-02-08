@@ -31,10 +31,21 @@
                 <label for="event-description">Description:</label>
                 <textarea id="event-description" name="event-description" required></textarea>
                 
-                <button type="submit">Add Event</button>
+                <button id="add-event" type="submit">Add Event</button>
             </form>
         </div>
-        
+
+        <!-- Event List Section -->
+        <div id="my-events">
+            <h2>My Events</h2>
+            <button id="clear-events">Clear All Events</button>
+            <p id="no-event-message">No events added. Add your first event!</p>
+            <ul id="event-list">
+                <!-- Event items will be dynamically added here -->
+            </ul>
+        </div>
+
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
