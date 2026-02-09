@@ -86,3 +86,91 @@ h2{
     transform: scale(1.05);
     transition: all 0.3s ease-in-out;
 }
+
+/* Styles for the Event_list in My_Events container */
+#event-list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+}
+
+.event-item{
+    flex: 0 1 calc(50% - 40px);
+    background-color: #e1ff96;
+    padding: 15px;
+    margin: 5px 0;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.event-title{
+    font-size: 16px;
+    color: #333;
+    margin: 0 0 5px 0;
+}
+
+.event-date{
+    font-size: 14px;
+    color: #777;
+    margin: 0 0 10px 0;
+}
+
+.event-category{
+    background-color: #55d11f;
+    color: white;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 10px;
+    margin: 0 0 10px 0;
+}
+
+.event-description{
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0 10px 0;
+}
+
+.delete-button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    float: right;
+    padding: 0;
+    margin: 0;
+    width: 30px;
+}
+
+.delete-icon:hover{
+    background-color: transparent;
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.delete-icon{
+    border-radius: 10px;
+    position: relative;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+    }
+
+    #add-new-events, #my-events {
+        width: 100%;
+        margin: 5px;
+    }
+
+    .event-item {
+        flex: 0 1 100%;
+    }
+}
