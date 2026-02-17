@@ -36,7 +36,7 @@ add_event_button.addEventListener('click', function(event) {
 
         const deleteButton = document.createElement("button");
         const deleteicon = document.createElement("img");
-        deleteicon.src = "download.webp"; // Assuming a delete icon image exists
+        deleteicon.src = "delete.png"; // Assuming a delete icon image exists
         deleteicon.alt = "Delete";
         deleteicon.setAttribute("class", "delete-icon");
         deleteButton.appendChild(deleteicon);
@@ -108,7 +108,7 @@ add_sample_events.addEventListener('click', function() {
 
         const deleteButton = document.createElement("button");
         const deleteicon = document.createElement("img");
-        deleteicon.src = "download.webp"; // Assuming a delete icon image exists
+        deleteicon.src = "delete.png"; // Assuming a delete icon image exists
         deleteicon.alt = "Delete";
         deleteicon.setAttribute("class", "delete-icon");
         deleteButton.appendChild(deleteicon);
