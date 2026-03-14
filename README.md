@@ -36,6 +36,13 @@ Smart-Event-Dashboard
 
 ---
 
+## Live Demo
+
+Live Project:
+https://anupam311.github.io/smart-event-dashboard
+
+---
+
 ## How to Use
 
 1. Open the project folder.  
