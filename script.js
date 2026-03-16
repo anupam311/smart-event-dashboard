@@ -18,20 +18,12 @@ function no_events() {
         no_event_message.setAttribute('hidden', true);
     }}
 
-add_event_button.addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent form from submitting normally
-
-    const title = event_title.value;
-    const date = event_date.value;
-    const category = event_category.value;
-    const description = event_description.value;
-
-    if (title && date && category && description) {
+function add_event(event) {
         const listItem = document.createElement("li");
         listItem.setAttribute("class", "event-item");
 
         const title_p = document.createElement("span");
-        title_p.innerHTML = "<strong>" + title + "</strong>";
+        title_p.innerHTML = "<strong>" + event.title + "</strong>";
         title_p.setAttribute("class", "event-title");
 
         const deleteButton = document.createElement("button");
@@ -43,15 +35,15 @@ add_event_button.addEventListener('click', function(event) {
         deleteButton.setAttribute("class", "delete-button");
 
         const date_p = document.createElement("p");
-        date_p.innerHTML = "<b>" + date + "</b>";
+        date_p.innerHTML = "<b>" + event.date + "</b>";
         date_p.setAttribute("class", "event-date");
 
         const category_p = document.createElement("span");
-        category_p.textContent = category;
+        category_p.textContent = event.category;
         category_p.setAttribute("class", "event-category");
 
         const description_p = document.createElement("p");
-        description_p.textContent = description;
+        description_p.textContent = event.description;
         description_p.setAttribute("class", "event-description");
 
         listItem.appendChild(title_p);
@@ -60,8 +52,20 @@ add_event_button.addEventListener('click', function(event) {
         listItem.appendChild(category_p);
         listItem.appendChild(description_p);
 
-        console.log(listItem);
         event_list.appendChild(listItem);
+}
+
+add_event_button.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent form from submitting normally
+
+    const title = event_title.value;
+    const date = event_date.value;
+    const category = event_category.value;
+    const description = event_description.value;
+    const dictionary = { title: title, date: date, category: category, description: description }
+
+    if (title && date && category && description) {
+        add_event(dictionary);
         n++;
 
         // Clear form fields
@@ -99,40 +103,7 @@ add_sample_events.addEventListener('click', function() {
     ];
 
     sample_events.forEach(event => {
-        const listItem = document.createElement("li");
-        listItem.setAttribute("class", "event-item");
-
-        const title_p = document.createElement("span");
-        title_p.innerHTML = "<strong>" + event.title + "</strong>";
-        title_p.setAttribute("class", "event-title");
-
-        const deleteButton = document.createElement("button");
-        const deleteicon = document.createElement("img");
-        deleteicon.src = "delete.png"; // Assuming a delete icon image exists
-        deleteicon.alt = "Delete";
-        deleteicon.setAttribute("class", "delete-icon");
-        deleteButton.appendChild(deleteicon);
-        deleteButton.setAttribute("class", "delete-button");
-
-        const date_p = document.createElement("p");
-        date_p.innerHTML = "<b>" + event.date + "</b>";
-        date_p.setAttribute("class", "event-date");
-
-        const category_p = document.createElement("span");
-        category_p.textContent = event.category;
-        category_p.setAttribute("class", "event-category");
-
-        const description_p = document.createElement("p");
-        description_p.textContent = event.description;
-        description_p.setAttribute("class", "event-description");
-
-        listItem.appendChild(title_p);
-        listItem.appendChild(deleteButton);
-        listItem.appendChild(date_p);
-        listItem.appendChild(category_p);
-        listItem.appendChild(description_p);
-
-        event_list.appendChild(listItem);
+        add_event(event);
     });
     n += sample_events.length;
     no_events();
